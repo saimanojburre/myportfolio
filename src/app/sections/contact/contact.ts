@@ -16,12 +16,12 @@ export class Contact {
     {
       label: 'LinkedIn',
       value: 'LinkedIn Profile',
-      href: 'YOUR_LINKEDIN_URL',
+      href: 'https://www.linkedin.com/in/saimanojburre',
     },
-    {
-      label: 'GitHub',
-      value: 'GitHub Profile',
-      href: 'YOUR_GITHUB_URL',
-    },
+    // {
+    //   label: 'GitHub',
+    //   value: 'GitHub Profile',
+    //   href: 'YOUR_GITHUB_URL',
+    // },
   ];
 }

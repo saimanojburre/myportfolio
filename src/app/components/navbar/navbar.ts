@@ -6,4 +6,17 @@ import { Component } from '@angular/core';
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })
-export class Navbar {}
+export class Navbar {
+  menuOpen = false;
+
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+
+    document.body.style.overflow = this.menuOpen ? 'hidden' : '';
+  }
+
+  closeMenu(): void {
+    this.menuOpen = false;
+    document.body.style.overflow = '';
+  }
+}
