@@ -1,218 +1,176 @@
-
 .contact {
- background: var(--bg-primary);
- position: relative;
- overflow: hidden;
+  padding: 150px 7vw 130px;
+  background: var(--bg-secondary);
 }
 
-/* ============================= */
-/* Background */
-/* ============================= */
-.contact::after {
- content: '';
- position: absolute;
- width: 500px;
- height: 500px;
- right: -250px;
- bottom: -250px;
- background: radial-gradient(
-   circle,
-   rgba(198, 161, 91, 0.08),
-   transparent 65%
- );
- pointer-events: none;
-}
-
-/* ============================= */
-/* Header */
-/* ============================= */
+/* =========================
+  HEADER
+========================= */
 .contact-header {
- max-width: 850px;
- margin-bottom: 90px;
+  // display: grid;
+  // grid-template-columns: 100px 1fr;
+  // align-items: start;
+  margin-bottom: 90px;
+}
+.section-number {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+.eyebrow {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+}
+.contact-title h2 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
 }
 
-.contact-header h2 {
- font-family: var(--font-heading);
- font-size: clamp(
-   3rem,
-   6vw,
-   6rem
- );
- font-weight: 500;
- line-height: 0.95;
- margin-bottom: 30px;
+/* =========================
+  CONTENT
+========================= */
+.contact-content {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.9fr) minmax(400px, 1.1fr);
+  gap: 10vw;
+  margin-left: 100px;
 }
 
-.contact-header h2 em {
- color: var(--accent);
- font-style: italic;
+/* =========================
+  MESSAGE
+========================= */
+.contact-message {
+  max-width: 480px;
+}
+.contact-message p {
+  margin: 0 0 45px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
 }
 
-.contact-header p {
- max-width: 600px;
- color: var(--text-secondary);
- line-height: 1.8;
+/* =========================
+  CTA
+========================= */
+.contact-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--text-primary);
+  transition:
+    gap 0.3s ease,
+    color 0.3s ease;
+}
+.contact-cta span {
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+.contact-cta:hover {
+  gap: 30px;
+  color: var(--accent);
 }
 
-/* ============================= */
-/* Contact Grid */
-/* ============================= */
-.contact-grid {
- display: grid;
- grid-template-columns: 0.8fr 1.2fr;
- gap: 120px;
- position: relative;
- z-index: 1;
+/* =========================
+  DETAILS
+========================= */
+.contact-details {
+  border-top: 1px solid var(--border);
 }
-
-/* ============================= */
-/* Contact Information */
-/* ============================= */
-.contact-info {
- display: flex;
- flex-direction: column;
- gap: 35px;
-}
-
 .contact-item {
- display: flex;
- flex-direction: column;
- gap: 7px;
+  display: grid;
+  grid-template-columns: 110px 1fr 30px;
+  align-items: center;
+  gap: 25px;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  transition: padding-left 0.3s ease;
+}
+.contact-item:not(.location):hover {
+  padding-left: 15px;
 }
 
 .contact-label {
- color: var(--accent);
- font-size: 0.65rem;
- text-transform: uppercase;
- letter-spacing: 0.15em;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
-.contact-item a,
-.location-text {
- color: var(--text-primary);
- font-size: 0.9rem;
- transition: var(--transition);
+.contact-value {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  word-break: break-word;
 }
 
-.contact-item a:hover {
- color: var(--accent);
+.contact-arrow {
+  font-size: 1rem;
+  color: var(--accent);
+  transition: transform 0.3s ease;
+}
+.contact-item:hover .contact-arrow {
+  transform: rotate(45deg);
 }
 
-.arrow {
- color: var(--accent);
- margin-left: 5px;
- transition: var(--transition);
-}
-
-.contact-item a:hover .arrow {
- display: inline-block;
- transform: translate(3px, -3px);
-}
-
-/* ============================= */
-/* Availability */
-/* ============================= */
-.availability {
- display: flex;
- align-items: center;
- gap: 10px;
- margin-top: 20px;
- color: var(--text-secondary);
- font-size: 0.72rem;
-}
-
-.availability-dot {
- width: 7px;
- height: 7px;
- border-radius: 50%;
- background: var(--sage);
- box-shadow:
-   0 0 0 5px rgba(113, 138, 118, 0.1);
-}
-
-/* ============================= */
-/* CTA */
-/* ============================= */
-.contact-cta {
- min-height: 300px;
- padding: 50px;
- border: 1px solid var(--border);
- background: var(--bg-card);
- display: flex;
- flex-direction: column;
- justify-content: space-between;
- transition: var(--transition);
-}
-
-.contact-cta:hover {
- border-color: rgba(198, 161, 91, 0.35);
-}
-
-.cta-number {
- color: var(--accent);
- font-family: var(--font-heading);
- font-size: 1.4rem;
-}
-
-.contact-cta p {
- max-width: 400px;
- font-family: var(--font-heading);
- font-size: 2rem;
- line-height: 1.2;
- color: var(--text-primary);
-}
-
-.email-button {
- align-self: flex-start;
- display: inline-flex;
- align-items: center;
- gap: 35px;
- padding: 15px 25px;
- border: 1px solid var(--accent);
- background: var(--accent);
- color: #10110f;
- font-size: 0.72rem;
- text-transform: uppercase;
- letter-spacing: 0.1em;
- transition: var(--transition);
-}
-
-.email-button span {
- font-size: 1.1rem;
- transition: var(--transition);
-}
-
-.email-button:hover {
- background: var(--accent-light);
- border-color: var(--accent-light);
-}
-
-.email-button:hover span {
- transform: translateX(5px);
-}
-
-/* ============================= */
-/* Responsive */
-/* ============================= */
+/* =========================
+  MOBILE
+========================= */
 @media (max-width: 900px) {
- .contact-grid {
-   grid-template-columns: 1fr;
-   gap: 60px;
- }
+  .contact {
+    padding: 100px 6vw;
+  }
+  .contact-header {
+    grid-template-columns: 50px 1fr;
+    margin-bottom: 60px;
+  }
+  .contact-title h2 {
+    font-size: clamp(3rem, 12vw, 5rem);
+  }
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 70px;
+    margin-left: 50px;
+  }
 }
 
 @media (max-width: 600px) {
- .contact-header {
-   margin-bottom: 60px;
- }
- .contact-header h2 {
-   font-size: 3.5rem;
- }
- .contact-cta {
-   min-height: 280px;
-   padding: 30px;
- }
- .contact-cta p {
-   font-size: 1.7rem;
- }
+  .contact {
+    padding: 90px 6vw;
+  }
+  .contact-header {
+    grid-template-columns: 40px 1fr;
+  }
+  .contact-content {
+    margin-left: 40px;
+  }
+  .contact-item {
+    grid-template-columns: 1fr 25px;
+    gap: 8px;
+  }
+  .contact-label {
+    grid-column: 1 / -1;
+  }
+  .contact-value {
+    grid-column: 1;
+  }
+  .contact-arrow {
+    grid-column: 2;
+    grid-row: 2;
+  }
 }

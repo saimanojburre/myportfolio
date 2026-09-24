@@ -1,92 +1,159 @@
-
 .hero {
- min-height: 100vh;
- display: flex;
- align-items: center;
- position: relative;
- overflow: hidden;
- padding-top: 80px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  // padding-top: 100px;
 }
+
 .hero-background {
- position: absolute;
- width: 600px;
- height: 600px;
- right: -200px;
- top: 10%;
- background: radial-gradient(
-   circle,
-   rgba(198, 161, 91, 0.12),
-   transparent 65%
- );
- pointer-events: none;
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  right: -150px;
+  top: 5%;
+  background: radial-gradient(circle, rgba(198, 160, 91, 0.183), transparent 65%);
+  pointer-events: none;
 }
+
 .hero-container {
- position: relative;
- z-index: 1;
+  position: relative;
+  z-index: 1;
 }
+
 .hero-content {
- max-width: 900px;
+  max-width: 1000px;
 }
-.eyebrow {
- color: var(--accent);
- font-size: 0.75rem;
- font-weight: 600;
- letter-spacing: 0.25em;
- margin-bottom: 25px;
+
+/* ============================= */
+/* NAME */
+/* ============================= */
+.name {
+  font-family: var(--font-heading);
+  font-size: clamp(3.2rem, 5vw, 5.8rem);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  margin-bottom: 14px;
 }
-h1 {
- font-family: var(--font-heading);
- font-size: clamp(4rem, 8vw, 7.5rem);
- font-weight: 500;
- line-height: 0.9;
- letter-spacing: -0.03em;
- margin-bottom: 35px;
- span {
-   color: var(--accent);
-   font-style: italic;
- }
+
+.name span {
+  color: var(--accent);
+  font-style: italic;
 }
+
+/* ============================= */
+/* ROLE */
+/* ============================= */
+.role {
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  margin-bottom: 35px;
+}
+
+/* ============================= */
+/* MAIN TITLE */
+/* ============================= */
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 4.5vw, 6.5rem);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.025em;
+  margin-bottom: 35px;
+  max-width: 950px;
+}
+
+.hero-title span {
+  color: var(--accent);
+  font-style: italic;
+}
+
+/* ============================= */
+/* DESCRIPTION */
+/* ============================= */
 .hero-description {
- max-width: 650px;
- color: var(--text-secondary);
- font-size: 1rem;
- line-height: 1.8;
- margin-bottom: 40px;
+  max-width: 680px;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.9;
+  margin-bottom: 40px;
 }
+
+/* ============================= */
+/* BUTTONS */
+/* ============================= */
 .hero-actions {
- display: flex;
- gap: 15px;
- margin-bottom: 70px;
+  display: flex;
+  gap: 15px;
+  margin-bottom: 65px;
 }
+
+/* ============================= */
+/* STATS */
+/* ============================= */
 .hero-meta {
- display: flex;
- gap: 60px;
- div {
-   display: flex;
-   flex-direction: column;
- }
- strong {
-   font-family: var(--font-heading);
-   font-size: 2rem;
-   font-weight: 600;
-   color: var(--text-primary);
- }
- span {
-   color: var(--text-secondary);
-   font-size: 0.7rem;
-   text-transform: uppercase;
-   letter-spacing: 0.1em;
- }
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
 }
+
+.hero-meta div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.hero-meta strong {
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.hero-meta span {
+  color: var(--text-secondary);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
 @media (max-width: 600px) {
- h1 {
-   font-size: 4rem;
- }
- .hero-actions {
-   flex-direction: column;
-   align-items: flex-start;
- }
- .hero-meta {
-   gap: 25px;
- }
+  .hero {
+    padding-top: 120px;
+    min-height: auto;
+    padding-bottom: 90px;
+  }
+
+  .name {
+    font-size: 3.5rem;
+  }
+
+  .role {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 35px;
+  }
+
+  .hero-title {
+    font-size: 3.6rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 50px;
+  }
+
+  .hero-meta {
+    gap: 30px;
+  }
 }

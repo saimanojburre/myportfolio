@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 
-interface ExperienceInterface {
- period: string;
- company: string;
- role: string;
- location: string;
- description: string;
- achievements: string[];
- technologies: string[];
- current?: boolean;
+interface Experiences {
+  number: string;
+  company: string;
+  role: string;
+  location: string;
+  duration: string;
+  technologies: string[];
+  description: string[];
 }
 
 @Component({
@@ -18,76 +17,48 @@ interface ExperienceInterface {
   styleUrl: './experience.scss',
 })
 export class Experience {
+  experiences: Experiences[] = [
+    {
+      number: '01',
+      company: 'WIPRO',
+      role: 'Senior Software Engineer',
+      location: 'Hyderabad, India',
+      duration: 'Mar 2026 — Present',
+      technologies: ['Angular', 'TypeScript', 'Java', 'Spring Boot'],
+      description: [
+        'Upskilled in cloud technologies and full-stack development to enhance end-to-end application delivery capabilities.',
+        'Improved understanding of scalable application architecture, authentication and deployment workflows.',
+      ],
+    },
 
- experiences: ExperienceInterface[] = [
-   {
-     period: 'Mar 2026 — Present',
-     company: 'Wipro',
-     role: 'Senior Software Engineer',
-     location: 'Hyderabad, India',
-     current: true,
-     description:
-       'Working on enterprise applications using modern frontend and backend technologies, with a focus on scalable application architecture and cloud-based solutions.',
-     achievements: [
-       'Developing enterprise applications using Angular, Java and Spring Boot.',
-       'Building and integrating RESTful APIs for frontend and backend communication.',
-       'Working with Azure services and modern cloud-based development practices.',
-       'Collaborating with cross-functional teams to deliver scalable software solutions.'
-     ],
-     technologies: [
-       'Angular',
-       'TypeScript',
-       'Java',
-       'Spring Boot',
-       'REST APIs',
-       'Azure'
-     ]
-   },
-   {
-     period: 'Jul 2023 — Jul 2025',
-     company: 'Tata Consultancy Services',
-     role: 'Senior Systems Engineer',
-     location: 'Hyderabad, India',
-     description:
-       'Worked on an Angular-based enterprise portal for server patching, reporting and access management.',
-     achievements: [
-       'Developed and maintained an Angular-based enterprise portal for server patching.',
-       'Implemented role-based access control for different user roles.',
-       'Built real-time reporting features to improve operational visibility.',
-       'Contributed to reducing manual operational effort by approximately 70%.',
-       'Worked closely with backend teams for REST API integration.'
-     ],
-     technologies: [
-       'Angular',
-       'TypeScript',
-       'HTML5',
-       'CSS3',
-       'REST APIs',
-       'Git'
-     ]
-   },
-   {
-     period: 'Oct 2020 — Jun 2023',
-     company: 'Capgemini',
-     role: 'Software Engineer',
-     location: 'Hyderabad, India',
-     description:
-       'Worked on enterprise software applications with a focus on frontend development and backend integration.',
-     achievements: [
-       'Developed responsive enterprise applications using Angular and TypeScript.',
-       'Integrated frontend applications with Java and Spring Boot REST APIs.',
-       'Implemented reusable components and services for maintainable application development.',
-       'Worked with cross-functional teams throughout the software development lifecycle.',
-       'Participated in code reviews, debugging and application enhancements.'
-     ],
-     technologies: [
-       'Angular',
-       'TypeScript',
-       'Java',
-       'Spring Boot',
-       'REST APIs',
-       'MySQL'
-     ]
-   }
- ];
+    {
+      number: '02',
+      company: 'TATA CONSULTANCY SERVICES',
+      role: 'Senior Systems Engineer',
+      location: 'Hyderabad, India',
+      duration: 'Jul 2023 — Jul 2025',
+      technologies: ['Angular', 'TypeScript', 'HTML5', 'CSS3'],
+      description: [
+        'Architected and delivered an Angular-based enterprise server patching platform used to identify and remediate vulnerable servers, improving infrastructure security and compliance.',
+        'Integrated secure RESTful APIs with authentication and error handling, reducing failures and ensuring reliable data exchange.',
+        'Built reusable Angular UI components aligned with modern UX standards, improving development speed and UI consistency.',
+        'Automated UI workflows, cutting manual effort by 70% and significantly improving operational efficiency.',
+      ],
+    },
+
+    {
+      number: '03',
+      company: 'CAPGEMINI',
+      role: 'Software Engineer',
+      location: 'Hyderabad, India',
+      duration: 'Oct 2020 — Jun 2023',
+      technologies: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'Microservices'],
+      description: [
+        'Developed a responsive insurance policy management platform with cross-browser and mobile support, improving accessibility and usability.',
+        'Created reusable Angular components and optimized backend APIs, enhancing performance, maintainability and response times.',
+        'Implemented end-to-end modules for client evaluation and resource management, ensuring accurate data flow and reliable reporting.',
+        'Integrated RESTful frontend-backend communication, improving system reliability, scalability and data consistency.',
+      ],
+    },
+  ];
 }

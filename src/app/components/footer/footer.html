@@ -1,75 +1,44 @@
 <footer class="footer">
-<div class="container">
-<!-- Top -->
-<div class="footer-top">
-<!-- Brand -->
-<div class="footer-brand">
-<a href="#home" class="footer-logo">
-         SM<span>.</span>
-</a>
-<p>
-         Full Stack Developer building scalable,
-         meaningful digital experiences.
-</p>
-</div>
+  <div class="footer-main">
+    <!-- Brand -->
+    <div class="footer-brand">
+      <a href="#hero" class="logo"> SM<span>.</span> </a>
+      <p>
+        Senior Full Stack Developer building scalable digital experiences from interface to backend.
+      </p>
+    </div>
 
-<!-- Navigation -->
-<nav class="footer-navigation">
-<a href="#about">
-         About
-</a>
-<a href="#skills">
-         Skills
-</a>
-<a href="#experience">
-         Experience
-</a>
-<a href="#projects">
-         Projects
-</a>
-<a href="#certifications">
-         Certifications
-</a>
-<a href="#contact">
-         Contact
-</a>
-</nav>
+    <!-- Navigation -->
+    <nav class="footer-nav">
+      <span class="nav-label">NAVIGATE</span>
+      @for (item of navigation; track item.label) {
+        <a [href]="item.href">
+          {{ item.label }}
+        </a>
+      }
+    </nav>
 
-<!-- Social -->
-<div class="footer-social">
-<a
-         href="https://github.com/"
-         target="_blank"
-         rel="noopener noreferrer"
->
-         GitHub
-<span>↗</span>
-</a>
-<a
-         href="https://www.linkedin.com/"
-         target="_blank"
-         rel="noopener noreferrer"
->
-         LinkedIn
-<span>↗</span>
-</a>
-<a href="mailto:your.email@example.com">
-         Email
-<span>↗</span>
-</a>
-</div>
-</div>
+    <!-- Social -->
+    <div class="footer-social">
+      <span class="nav-label">CONNECT</span>
+      <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener noreferrer">
+        LinkedIn
+        <span>↗</span>
+      </a>
+      <a href="YOUR_GITHUB_URL" target="_blank" rel="noopener noreferrer">
+        GitHub
+        <span>↗</span>
+      </a>
+    </div>
+  </div>
 
-<!-- Bottom -->
-<div class="footer-bottom">
-<p>
-       © {{ currentYear }} Sai Manoj. All rights reserved.
-</p>
-<p>
-       Designed & built with
-<span class="heart">♥</span>
-       using Angular.
-</p>
-</div>
-</div>
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <span> © {{ currentYear }} Sai Manoj Burre </span>
+    <span> Built with Angular </span>
+    <a href="#home" class="back-top">
+      BACK TO TOP
+      <span>↑</span>
+    </a>
+  </div>
 </footer>

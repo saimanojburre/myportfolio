@@ -1,98 +1,74 @@
 <section class="experience" id="experience">
-<div class="container">
-<!-- Header -->
-<div class="section-header">
-<div>
-<div class="section-label">
-         03 — EXPERIENCE
-</div>
-<h2 class="section-title">
-         Where I've
-<em>worked.</em>
-</h2>
-</div>
-<p class="section-description">
-       A journey through enterprise software development,
-       from building user interfaces to designing scalable
-       full-stack solutions.
-</p>
-</div>
+  <div class="container">
+    <!-- Header -->
+    <div class="section-header">
+      <div>
+        <div class="section-label">EXPERIENCE</div>
+        <h2 class="section-title">
+          Building through
+          <em>experience.</em>
+        </h2>
+      </div>
+      <p class="section-description">
+        Over 6 years of experience delivering enterprise applications across software engineering,
+        banking and insurance domains.
+      </p>
+    </div>
 
-<!-- Experience Timeline -->
-<div class="experience-list">
-     @for (experience of experiences; track experience.company) {
-<article
-         class="experience-item"
-         [class.current]="experience.current"
->
-<!-- Timeline -->
-<div class="timeline">
-<div class="timeline-dot"></div>
-</div>
+    <!-- Timeline -->
+    <div class="experience-list">
+      @for (experience of experiences; track experience.number) {
+        <article class="experience-item">
+          <!-- Timeline -->
+          <div class="timeline">
+            <span class="timeline-number">
+              {{ experience.number }}
+            </span>
+            <span class="timeline-line"></span>
+          </div>
 
-<!-- Period -->
-<div class="experience-period">
-<span>
-             {{ experience.period }}
-</span>
-           @if (experience.current) {
-<span class="current-badge">
-               Current
-</span>
-           }
-</div>
+          <!-- Experience Content -->
+          <div class="experience-content">
+            <!-- Top -->
+            <div class="experience-top">
+              <div>
+                <h3>
+                  {{ experience.company }}
+                </h3>
+                <div class="role">
+                  {{ experience.role }}
+                </div>
+              </div>
+              <div class="experience-meta">
+                <span>
+                  {{ experience.duration }}
+                </span>
+                <span>
+                  {{ experience.location }}
+                </span>
+              </div>
+            </div>
 
-<!-- Main Content -->
-<div class="experience-content">
-<div class="experience-heading">
-<div>
-<h3>
-                 {{ experience.role }}
-</h3>
-<h4>
-                 {{ experience.company }}
-</h4>
-</div>
-<span class="location">
-               {{ experience.location }}
-</span>
-</div>
+            <!-- Technologies -->
+            <div class="technology-list">
+              @for (technology of experience.technologies; track technology) {
+                <span>
+                  {{ technology }}
+                </span>
+              }
+            </div>
 
-<p class="experience-description">
-             {{ experience.description }}
-</p>
-
-<!-- Achievements -->
-<div class="achievements">
-<h5>
-               Key Contributions
-</h5>
-<ul>
-               @for (
-                 achievement of experience.achievements;
-                 track achievement
-               ) {
-<li>
-                   {{ achievement }}
-</li>
-               }
-</ul>
-</div>
-
-<!-- Technologies -->
-<div class="technology-list">
-             @for (
-               technology of experience.technologies;
-               track technology
-             ) {
-<span>
-                 {{ technology }}
-</span>
-             }
-</div>
-</div>
-</article>
-     }
-</div>
-</div>
+            <!-- Description -->
+            <ul class="experience-description">
+              @for (point of experience.description; track point) {
+                <li>
+                  {{ point }}
+                </li>
+              }
+            </ul>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
 </section>
