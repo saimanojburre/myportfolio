@@ -1,0 +1,107 @@
+<section class="projects" id="projects">
+  <div class="container">
+    <!-- Header -->
+    <div class="section-header">
+      <div>
+        <div class="section-label">PROJECTS</div>
+        <h2 class="section-title">
+          Things I've
+          <em>built.</em>
+        </h2>
+      </div>
+      <p class="section-description">
+        A selection of personal and enterprise projects spanning restaurant technology, banking and
+        insurance applications.
+      </p>
+    </div>
+
+    <!-- Projects -->
+    <div class="projects-list">
+      @for (project of projects; track project.number) {
+        <article class="project-card">
+          <!-- Number -->
+          <div class="project-number">
+            {{ project.number }}
+          </div>
+
+          <!-- Main Content -->
+          <div class="project-content">
+            <!-- Meta -->
+            <div class="project-meta">
+              <span>
+                {{ project.type }}
+              </span>
+              <span>
+                {{ project.domain }}
+              </span>
+            </div>
+
+            <!-- Title -->
+            <h3>
+              {{ project.title }}
+            </h3>
+
+            <!-- Description -->
+            <p class="project-description">
+              {{ project.description }}
+            </p>
+
+            <!-- Contributions -->
+            <div class="project-contributions">
+              <h4>Key Contributions</h4>
+              <ul>
+                @for (contribution of project.contributions; track contribution) {
+                  <li>
+                    {{ contribution }}
+                  </li>
+                }
+              </ul>
+            </div>
+
+            <!-- Technologies -->
+            <div class="project-technologies">
+              @for (technology of project.technologies; track technology) {
+                <span>
+                  {{ technology }}
+                </span>
+              }
+            </div>
+
+            <!-- Links -->
+            @if (project.github || project.live) {
+              <div class="project-links">
+                @if (project.github) {
+                  <a [href]="project.github" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                    <span>↗</span>
+                  </a>
+                }
+                @if (project.live) {
+                  <a [href]="project.live" target="_blank" rel="noopener noreferrer">
+                    Live Website
+                    <span>↗</span>
+                  </a>
+                }
+              </div>
+            }
+          </div>
+
+          <!-- Visual -->
+          <div class="project-visual">
+            <div class="visual-content">
+              <span class="visual-number">
+                {{ project.number }}
+              </span>
+              <span class="visual-type">
+                {{ project.type }}
+              </span>
+              <span class="visual-domain">
+                {{ project.domain }}
+              </span>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

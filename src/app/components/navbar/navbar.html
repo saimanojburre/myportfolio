@@ -1,0 +1,51 @@
+<header class="navbar">
+  <div class="container nav-container">
+    <!-- Logo -->
+    <a href="#home" class="logo" (click)="closeMenu()"> SM<span>.</span> </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Desktop Resume -->
+    <a href="assets/Sai Manoj Burre Resume.pdf" target="_blank" class="resume-button"> Resume </a>
+
+    <!-- Mobile Menu Button -->
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Toggle navigation"
+      [attr.aria-expanded]="menuOpen"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-menu" [class.active]="menuOpen">
+    <a href="#home" (click)="closeMenu()">Home</a>
+    <a href="#about" (click)="closeMenu()">About</a>
+    <a href="#skills" (click)="closeMenu()">Skills</a>
+    <a href="#experience" (click)="closeMenu()">Experience</a>
+    <a href="#projects" (click)="closeMenu()">Projects</a>
+    <a href="#contact" (click)="closeMenu()">Contact</a>
+
+    <a
+      href="assets/Sai Manoj Burre Resume.pdf"
+      target="_blank"
+      class="mobile-resume"
+      (click)="closeMenu()"
+    >
+      View Resume ↗
+    </a>
+  </nav>
+</header>

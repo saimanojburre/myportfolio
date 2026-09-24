@@ -1,0 +1,44 @@
+<footer class="footer">
+  <div class="footer-main">
+    <!-- Brand -->
+    <div class="footer-brand">
+      <a href="#hero" class="logo"> SM<span>.</span> </a>
+      <p>
+        Senior Full Stack Developer building scalable digital experiences from interface to backend.
+      </p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="footer-nav">
+      <span class="nav-label">NAVIGATE</span>
+      @for (item of navigation; track item.label) {
+        <a [href]="item.href">
+          {{ item.label }}
+        </a>
+      }
+    </nav>
+
+    <!-- Social -->
+    <div class="footer-social">
+      <span class="nav-label">CONNECT</span>
+      <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener noreferrer">
+        LinkedIn
+        <span>↗</span>
+      </a>
+      <a href="YOUR_GITHUB_URL" target="_blank" rel="noopener noreferrer">
+        GitHub
+        <span>↗</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <span> © {{ currentYear }} Sai Manoj Burre </span>
+    <span> Built with Angular </span>
+    <a href="#home" class="back-top">
+      BACK TO TOP
+      <span>↑</span>
+    </a>
+  </div>
+</footer>

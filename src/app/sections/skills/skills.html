@@ -1,0 +1,49 @@
+<section class="skills" id="skills">
+  <div class="container">
+    <!-- Header -->
+    <div class="section-header">
+      <div>
+        <div class="section-label">SKILLS</div>
+        <h2 class="section-title">
+          Tools for
+          <em>building.</em>
+        </h2>
+      </div>
+      <p class="section-description">
+        A full-stack toolkit built through enterprise application development, cloud delivery and
+        continuous learning.
+      </p>
+    </div>
+
+    <!-- Skills -->
+    <div class="skills-list">
+      @for (category of skillCategories; track category.number) {
+        <article class="skill-row">
+          <!-- Number -->
+          <div class="skill-number">
+            {{ category.number }}
+          </div>
+
+          <!-- Category -->
+          <div class="skill-category">
+            <h3>
+              {{ category.title }}
+            </h3>
+            <p>
+              {{ category.description }}
+            </p>
+          </div>
+
+          <!-- Technologies -->
+          <div class="skill-items">
+            @for (skill of category.skills; track skill) {
+              <span class="skill-item">
+                {{ skill }}
+              </span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
