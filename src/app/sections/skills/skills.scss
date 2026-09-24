@@ -1,0 +1,170 @@
+.skills {
+ background: var(--bg-primary);
+}
+.section-header {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 80px;
+ align-items: end;
+ margin-bottom: 80px;
+}
+.section-title {
+ em {
+   color: var(--accent);
+   font-style: italic;
+ }
+}
+.section-description {
+ max-width: 500px;
+ line-height: 1.8;
+}
+
+/* ============================= */
+/* Skill Categories */
+/* ============================= */
+.skill-categories {
+ display: flex;
+ flex-direction: column;
+ gap: 80px;
+}
+.skill-category {
+ border-top: 1px solid var(--border);
+ padding-top: 30px;
+}
+
+/* ============================= */
+/* Category Header */
+/* ============================= */
+.category-header {
+ display: grid;
+ grid-template-columns: 80px 1fr;
+ gap: 30px;
+ margin-bottom: 35px;
+}
+.category-number {
+ color: var(--accent);
+ font-family: var(--font-heading);
+ font-size: 1.4rem;
+}
+.category-header h3 {
+ font-family: var(--font-heading);
+ font-size: 2.2rem;
+ font-weight: 500;
+ margin-bottom: 8px;
+}
+.category-header p {
+ color: var(--text-secondary);
+ font-size: 0.85rem;
+ max-width: 500px;
+}
+
+/* ============================= */
+/* Skills Grid */
+/* ============================= */
+.skills-grid {
+ display: grid;
+ grid-template-columns:
+   repeat(3, 1fr);
+ gap: 12px;
+}
+
+/* ============================= */
+/* Skill Card */
+/* ============================= */
+.skill-card {
+ background: var(--bg-card);
+ border: 1px solid var(--border);
+ padding: 25px;
+ min-height: 135px;
+ transition:
+   transform var(--transition),
+   border-color var(--transition),
+   background var(--transition);
+ position: relative;
+ overflow: hidden;
+}
+
+/* Gold line */
+.skill-card::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 0;
+ height: 2px;
+ background: var(--accent);
+ transition: width var(--transition);
+}
+
+/* Hover */
+.skill-card:hover {
+ transform: translateY(-5px);
+ border-color: rgba(198, 161, 91, 0.35);
+ background: #181d1a;
+}
+.skill-card:hover::before {
+ width: 100%;
+}
+
+/* ============================= */
+/* Skill Top */
+/* ============================= */
+.skill-top {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ gap: 10px;
+ margin-bottom: 12px;
+}
+.skill-top h4 {
+ font-size: 0.95rem;
+ font-weight: 600;
+ color: var(--text-primary);
+}
+
+/* ============================= */
+/* Skill Level */
+/* ============================= */
+.skill-level {
+ color: var(--accent);
+ font-size: 0.6rem;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ white-space: nowrap;
+}
+
+/* ============================= */
+/* Description */
+/* ============================= */
+.skill-card p {
+ color: var(--text-secondary);
+ font-size: 0.75rem;
+ line-height: 1.6;
+}
+
+/* ============================= */
+/* Responsive */
+/* ============================= */
+@media (max-width: 900px) {
+ .section-header {
+   grid-template-columns: 1fr;
+   gap: 25px;
+ }
+ .skills-grid {
+   grid-template-columns:
+     repeat(2, 1fr);
+ }
+}
+
+@media (max-width: 600px) {
+ .skills-grid {
+   grid-template-columns: 1fr;
+ }
+ .category-header {
+   grid-template-columns: 50px 1fr;
+   gap: 15px;
+ }
+ .category-header h3 {
+   font-size: 1.8rem;
+ }
+}

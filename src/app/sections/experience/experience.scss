@@ -1,0 +1,259 @@
+.experience {
+ background: var(--bg-secondary);
+}
+
+/* ============================= */
+/* Header */
+/* ============================= */
+.section-header {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 80px;
+ align-items: end;
+ margin-bottom: 100px;
+}
+.section-title {
+ em {
+   color: var(--accent);
+   font-style: italic;
+ }
+}
+
+/* ============================= */
+/* Experience List */
+/* ============================= */
+.experience-list {
+ position: relative;
+}
+
+/* ============================= */
+/* Experience Item */
+/* ============================= */
+.experience-item {
+ display: grid;
+ grid-template-columns:
+   200px
+   1fr;
+ gap: 40px;
+ position: relative;
+ padding-bottom: 50px;
+}
+
+/* ============================= */
+/* Timeline */
+/* ============================= */
+.timeline {
+ position: absolute;
+ left: 8.5rem;
+ top: 0;
+ bottom: 0;
+ width: 80px;
+ display: flex;
+ justify-content: center;
+}
+.timeline::before {
+ content: '';
+ position: absolute;
+ top: 10px;
+ bottom: 0;
+ width: 1px;
+ background: var(--border);
+}
+
+.timeline-dot {
+ width: 11px;
+ height: 11px;
+ border: 1px solid var(--accent);
+ background: var(--bg-secondary);
+ border-radius: 50%;
+ position: relative;
+ z-index: 2;
+ margin-top: 5px;
+ transition: var(--transition);
+}
+
+.experience-item:hover .timeline-dot {
+ background: var(--accent);
+ box-shadow:
+   0 0 0 6px rgba(198, 161, 91, 0.08);
+}
+
+/* ============================= */
+/* Period */
+/* ============================= */
+.experience-period {
+ padding-top: 2px;
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+}
+.experience-period > span:first-child {
+ color: var(--text-secondary);
+ font-size: 0.72rem;
+ line-height: 1.5;
+ letter-spacing: 0.04em;
+}
+
+/* ============================= */
+/* Current Badge */
+/* ============================= */
+.current-badge {
+ display: inline-block;
+ width: fit-content;
+ padding: 4px 9px;
+ border: 1px solid rgba(113, 138, 118, 0.4);
+ color: var(--sage);
+ font-size: 0.58rem;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+}
+
+/* ============================= */
+/* Main Content */
+/* ============================= */
+.experience-content {
+ padding-bottom: 50px;
+ border-bottom: 1px solid var(--border);
+}
+
+/* ============================= */
+/* Heading */
+/* ============================= */
+.experience-heading {
+ display: flex;
+ justify-content: space-between;
+ gap: 30px;
+ margin-bottom: 25px;
+}
+.experience-heading h3 {
+ font-family: var(--font-heading);
+ font-size: 2.2rem;
+ font-weight: 500;
+ line-height: 1.1;
+ margin-bottom: 6px;
+}
+.experience-heading h4 {
+ color: var(--accent);
+ font-size: 0.8rem;
+ font-weight: 500;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+}
+.location {
+ color: var(--text-secondary);
+ font-size: 0.7rem;
+ white-space: nowrap;
+}
+
+/* ============================= */
+/* Description */
+/* ============================= */
+.experience-description {
+ color: var(--text-secondary);
+ max-width: 700px;
+ font-size: 0.9rem;
+ line-height: 1.8;
+ margin-bottom: 35px;
+}
+
+/* ============================= */
+/* Achievements */
+/* ============================= */
+.achievements {
+ margin-bottom: 30px;
+}
+.achievements h5 {
+ color: var(--text-primary);
+ font-size: 0.7rem;
+ text-transform: uppercase;
+ letter-spacing: 0.15em;
+ margin-bottom: 15px;
+}
+.achievements ul {
+ list-style: none;
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+}
+.achievements li {
+ position: relative;
+ padding-left: 20px;
+ color: var(--text-secondary);
+ font-size: 0.82rem;
+ line-height: 1.7;
+}
+.achievements li::before {
+ content: '—';
+ position: absolute;
+ left: 0;
+ color: var(--accent);
+}
+
+/* ============================= */
+/* Technology Tags */
+/* ============================= */
+.technology-list {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 8px;
+}
+.technology-list span {
+ padding: 7px 12px;
+ border: 1px solid var(--border);
+ color: var(--text-secondary);
+ font-size: 0.65rem;
+ letter-spacing: 0.04em;
+ transition: var(--transition);
+}
+.technology-list span:hover {
+ border-color: var(--accent);
+ color: var(--accent);
+}
+
+/* ============================= */
+/* Responsive */
+/* ============================= */
+@media (max-width: 900px) {
+ .section-header {
+   grid-template-columns: 1fr;
+   gap: 25px;
+ }
+ .experience-item {
+   grid-template-columns:
+     50px
+     150px
+     1fr;
+ }
+ .timeline {
+   width: 50px;
+ }
+}
+
+@media (max-width: 700px) {
+ .experience-item {
+   grid-template-columns: 40px 1fr;
+   gap: 20px;
+ }
+ .timeline {
+   width: 40px;
+ }
+ .experience-period {
+   grid-column: 2;
+   grid-row: 1;
+   padding-left: 0;
+   margin-bottom: 15px;
+ }
+ .experience-content {
+   grid-column: 2;
+ }
+ .experience-heading {
+   flex-direction: column;
+   gap: 10px;
+ }
+ .experience-heading h3 {
+   font-size: 1.9rem;
+ }
+ .location {
+   white-space: normal;
+ }
+}

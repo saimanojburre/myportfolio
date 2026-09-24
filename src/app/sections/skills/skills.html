@@ -1,0 +1,60 @@
+<section class="skills" id="skills">
+<div class="container">
+<!-- Section Header -->
+<div class="section-header">
+<div>
+<div class="section-label">
+         02 — EXPERTISE
+</div>
+<h2 class="section-title">
+         Tools of the
+<em>trade.</em>
+</h2>
+</div>
+<p class="section-description">
+       A combination of frontend, backend, cloud and engineering
+       practices that I use to build reliable and scalable applications.
+</p>
+</div>
+
+<!-- Skill Categories -->
+<div class="skill-categories">
+     @for (category of skillCategories; track category.number) {
+<article class="skill-category">
+<div class="category-header">
+<span class="category-number">
+             {{ category.number }}
+</span>
+<div>
+<h3>
+               {{ category.title }}
+</h3>
+<p>
+               {{ category.description }}
+</p>
+</div>
+</div>
+
+<!-- Skills -->
+<div class="skills-grid">
+           @for (skill of category.skills; track skill.name) {
+<div class="skill-card">
+<div class="skill-top">
+<h4>
+                   {{ skill.name }}
+</h4>
+<span class="skill-level">
+                   {{ skill.level }}
+</span>
+</div>
+<p>
+                 {{ skill.description }}
+</p>
+</div>
+           }
+</div>
+</article>
+     }
+</div>
+</div>
+</section>

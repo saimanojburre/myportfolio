@@ -1,0 +1,114 @@
+<section class="projects" id="projects">
+<div class="container">
+<!-- Header -->
+<div class="section-header">
+<div>
+<div class="section-label">
+         04 — SELECTED WORK
+</div>
+<h2 class="section-title">
+         Things I've
+<em>built.</em>
+</h2>
+</div>
+<p class="section-description">
+       A selection of applications and engineering projects
+       demonstrating my experience across frontend, backend,
+       cloud and AI technologies.
+</p>
+</div>
+
+<!-- Projects -->
+<div class="projects-list">
+     @for (project of projects; track project.number) {
+<article
+         class="project-card"
+         [class.featured]="project.featured"
+>
+<!-- Project Number -->
+<div class="project-number">
+           {{ project.number }}
+</div>
+
+<!-- Project Content -->
+<div class="project-content">
+<div class="project-category">
+             {{ project.category }}
+</div>
+<h3>
+             {{ project.title }}
+</h3>
+<p class="project-description">
+             {{ project.description }}
+</p>
+<p class="project-details">
+             {{ project.details }}
+</p>
+
+<!-- Features -->
+<div class="project-features">
+             @for (
+               feature of project.features;
+               track feature
+             ) {
+<span>
+                 {{ feature }}
+</span>
+             }
+</div>
+
+<!-- Technologies -->
+<div class="project-technologies">
+             @for (
+               technology of project.technologies;
+               track technology
+             ) {
+<span>
+                 {{ technology }}
+</span>
+             }
+</div>
+
+<!-- Links -->
+<div class="project-links">
+             @if (project.github) {
+<a
+                 [href]="project.github"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="project-link"
+>
+                 GitHub
+<span>↗</span>
+</a>
+             }
+             @if (project.live) {
+<a
+                 [href]="project.live"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="project-link"
+>
+                 Live Demo
+<span>↗</span>
+</a>
+             }
+</div>
+</div>
+
+<!-- Visual -->
+<div class="project-visual">
+<div class="visual-inner">
+<span class="visual-number">
+               {{ project.number }}
+</span>
+<span class="visual-label">
+               {{ project.category }}
+</span>
+</div>
+</div>
+</article>
+     }
+</div>
+</div>
+</section>
